@@ -1,7 +1,18 @@
-#!/usr/bin/env python3
+while True:
+  user_input = input("enter the number of terms in the Fibonacci sequance: ")
+  
+        if user_input.isdigit():
+          n = int(user_input)
+          if n > 0:
+            break
+        else:
+        print("please enter a positive integer.")
 
-# Fibonacci Sequence Exercise
-# TODO: (Read detailed instructions in the Readme file)
-# Prompt the user for the number of terms.
-# Validate that the input is a positive integer.
-# Use a for loop to print the Fibonacci sequence up to that many terms.
+    else:
+     print("please enter a positive integer.")
+      
+a, b = 0, 1
+for _ in range(n):
+  print(a, end=" ")
+  a, b = b, a + b
+print()
