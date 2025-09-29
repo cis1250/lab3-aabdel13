@@ -37,7 +37,7 @@ while (is_sentence(user_sentence) == False):
     user_input = input("Hello world! Hello everyone: ")
 
 # Split the sentence into words
-words = clean_sentence.lower().split()
+words = user_sentence.lower().split()
 
 # Create lists to store unique words and their frequencies
 unique_words = []
