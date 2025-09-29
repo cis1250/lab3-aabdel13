@@ -8,6 +8,7 @@
 # 4. Iterate through words and update frequencies
 
 import re
+import string 
 
 #This is a function that checks if a text qualifies as a sentence. You do not need to modify this!
 def is_sentence(text):
@@ -29,9 +30,32 @@ def is_sentence(text):
 
     return True
 
-user_sentence = input("Enter a sentence: ")
+user_sentence = input("Hello world! Hello everyone: ")
 
 while (is_sentence(user_sentence) == False):
     print("This does not meet the criteria for a sentence.")
-    user_input = input("Enter a sentence: ")
-    
+    user_input = input("Hello world! Hello everyone: ")
+
+# Remove punctuation (optional, for clean word counting)
+translator = str.maketrans('', '', string.punctuation)
+clean_sentence = user_sentence.translate(translator)
+
+# Split the sentence into words
+words = clean_sentence.lower().split()
+
+# Create lists to store unique words and their frequencies
+unique_words = []
+frequencies = []
+
+# Iterate through words and update frequencies
+for word in words:
+    if word in unique_words:
+        index = unique_words.index(word)
+        frequencies[index] += 1
+    else:
+        unique_words.append(word)
+        frequencies.append(1)
+
+# Print the results
+for i in range(len(unique_words)):
+    print(f"{unique_words[i]}: {frequencies[i]}")
