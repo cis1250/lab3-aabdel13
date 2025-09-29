@@ -36,10 +36,6 @@ while (is_sentence(user_sentence) == False):
     print("This does not meet the criteria for a sentence.")
     user_input = input("Hello world! Hello everyone: ")
 
-# Remove punctuation (optional, for clean word counting)
-translator = str.maketrans('', '', string.punctuation)
-clean_sentence = user_sentence.translate(translator)
-
 # Split the sentence into words
 words = clean_sentence.lower().split()
 
