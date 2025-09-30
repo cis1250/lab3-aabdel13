@@ -10,7 +10,7 @@
 import re
 import string 
 
-#This is a function that checks if a text qualifies as a sentence. You do not need to modify this!
+# Function that checks if a text qualifies as a sentence
 def is_sentence(text):
     # Check if the text is not empty and is a string
     if not isinstance(text, str) or not text.strip():
@@ -30,11 +30,13 @@ def is_sentence(text):
 
     return True
 
-user_sentence = input("Hello world! Hello everyone: ")
 
-while (is_sentence(user_sentence) == False):
+# Prompt user for input
+user_sentence = input("Please enter a sentence: ")
+
+while not is_sentence(user_sentence):
     print("This does not meet the criteria for a sentence.")
-    user_input = input("Hello world! Hello everyone: ")
+    user_sentence = input("Please enter a sentence: ")
 
 # Split the sentence into words
 words = user_sentence.lower().split()
